@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+}
+
+main {
+    background-color: #FBFBFD;
+    div {
+        padding: 24px 72px;
+        margin: 0 auto;
+        max-width: 1440px;
+        h1 {
+            color: #111111;
+            font-size: 48px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            color: #636363;
+        }
+        ul {
+            list-style-type: none;
+            li {
+                margin: 8px 0;
+                a {
+                    color: #0066CC;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                        color: #004e9c;
+                    }
+                }
+            }
+        }
+        form {
+            &#post, &#put {
+                display: none;
+            }
+            input, select, textarea {
+                display: grid;
+                width: 480px;
+                margin: 8px 0;
+                padding: 8px 16px;
+                font-size: 16px;
+                color: #111111;
+                background-color: #FFFFFF;
+                border: 1px solid #e9f4ff;
+                &:focus {
+                    outline: 0;
+                    border: 1px solid #0066CC;
+                }
+                &[type=submit] {
+                    background-color: #0066CC;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #004e9c;
+                    }
+                }
+            }
+        }
+    }
+    figure {
+        margin: 0 auto;
+        img {
+            width: 100%;
+            display: grid;
+            object-fit: cover;
+            height: 400px;
+        }
+    }
+    article {
+        padding: 24px 72px;
+        margin: 0 auto;
+        max-width: 1440px;
+        display: grid;
+        grid-template-columns: repeat(2, 49%);
+        gap: 24px 2%;
+        section {
+            border: 1px solid #e9f4ff;
+            background-color: #FFFFFF;
+            padding: 16px;
+            figure {
+                img {
+                    height: 160px;
+                }
+            }
+            h2 {
+                font-size: 24px;
+                font-weight: 700;
+            }
+            a {
+                color: #0066CC;
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 16px;
+                &:hover {
+                    text-decoration: underline;
+                    color: #004e9c;
+                }
+            }
+        }
+    }
+}

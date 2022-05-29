@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main>
+        <div>
+            <% data.forEach(onlyData => { %>
+            <h1><%= onlyData.title %></h1>
+            <p><%= onlyData.content %> </p>
+            <p><em>Created on, <%= onlyData.createdAt %></em></p>
+            <h2>Comments</h2>
+            <% data2.forEach(onlyData2 => { %>
+            <p><%= onlyData2.relationship %>, by <em><%= onlyData2.email %></em></p>
+            <% }); %>
+            <form action="../addComment" method="post">
+                <h3>Comments</h3>
+                <input type="email" name="email" id="email" placeholder="Your Email">
+                <input type="text" name="relationship" id="relationship" placeholder="Your Relationship">
+                <input type="number" name="articleid" id="articleid" value="<%= onlyData.id %>" hidden readonly>
+                <input type="submit" value="Add Comment">
+            </form>
+            <br>
+            <hr>
+            <form action="../deleteArticle/<%= onlyData.id %>" method="post">
+                <input type="number" name="id" id="id" value="<%= onlyData.id %>" hidden readonly>
+                <input type="submit" value="Delete Article">
+            </form>
+            <% }); %>
+        </div>
+        <figure>
+            <% data.forEach(onlyData => { %>
+            <img src="<%= onlyData.image %>" alt="Article"> 
+            <% }); %>
+        </figure>
+    </main>
+</body>
+</html>

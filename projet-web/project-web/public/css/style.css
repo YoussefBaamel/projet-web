@@ -1,0 +1,133 @@
+body {
+  margin: 0 auto;
+}
+
+main {
+  background-color: #FBFBFD;
+}
+
+main div {
+  padding: 24px 72px;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+main div h1 {
+  color: #111111;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+main div p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #636363;
+}
+
+main div ul {
+  list-style-type: none;
+}* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+  scroll-behavior: smooth;
+}
+
+main div ul li {
+  margin: 8px 0;
+}
+
+main div ul li a {
+  color: #0066CC;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+main div ul li a:hover {
+  text-decoration: underline;
+  color: #004e9c;
+}
+
+main div form#post, main div form#put {
+  display: none;
+}
+
+main div form input, main div form select, main div form textarea {
+  display: -ms-grid;
+  display: grid;
+  width: 480px;
+  margin: 8px 0;
+  padding: 8px 16px;
+  font-size: 16px;
+  color: #111111;
+  background-color: #FFFFFF;
+  border: 1px solid #e9f4ff;
+}
+
+main div form input:focus, main div form select:focus, main div form textarea:focus {
+  outline: 0;
+  border: 1px solid #0066CC;
+}
+
+main div form input[type=submit], main div form select[type=submit], main div form textarea[type=submit] {
+  background-color: #0066CC;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+main div form input[type=submit]:hover, main div form select[type=submit]:hover, main div form textarea[type=submit]:hover {
+  background-color: #004e9c;
+}
+
+main figure {
+  margin: 0 auto;
+}
+
+main figure img {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 400px;
+}
+
+main article {
+  padding: 24px 72px;
+  margin: 0 auto;
+  max-width: 1440px;
+  display: -ms-grid;
+  display: grid;
+  /* -ms-grid-columns: (49%)[2];
+  grid-template-columns: repeat(2, 49%);
+  gap: 24px 2%; */
+}
+
+main article section {
+  border: 1px solid #e9f4ff;
+  background-color: #FFFFFF;
+  padding: 16px;
+}
+
+main article section figure img {
+  height: 160px;
+}
+
+main article section h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+main article section a {
+  color: #0066CC;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+main article section a:hover {
+  text-decoration: underline;
+  color: #004e9c;
+}

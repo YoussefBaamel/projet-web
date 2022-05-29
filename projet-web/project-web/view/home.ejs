@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script async>
+        const addArticle = () => {
+            document.getElementById("post").style.display = "block";
+            document.getElementById("add").style.display = "none";
+        }
+        const changeArticle = () => {
+            document.getElementById("post").style.display = "none";
+            document.getElementById("add").style.display = "block";
+        }
+        const showArticle = () => {
+            document.getElementById("post").style.display = "none";
+            document.getElementById("add").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div>
+            <ul>
+                <li><a onclick="addArticle();">+ Create/Post Article</a></li>
+                <li><a onclick="changeArticle();">* Edit/Put Article</a></li>
+                <li><a href="#article" onclick="showArticle();">. View/Read Article</a></li>
+            </ul>
+            <form action="./addArticle" method="post" id="post">
+                <input type="text" name="title" id="title" placeholder="Title">
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+                <input type="text" name="image" id="image" placeholder="Image Link">
+                <input type="date" name="createdAt" id="createdAt" placeholder="Created At">
+                <input type="date" name="updatedAt" id="updatedAt" placeholder="Updated At">
+                <select name="published" id="published">
+                    <option disabled selected>Published?</option>
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+                <input type="number" name="userid" id="userid" placeholder="User ID">
+                <select name="idCategory" id="idCategory">
+                    <option disabled selected>Choose Category</option>
+                    <% data2.forEach(onlyData => { %>
+                    <option value="<%= onlyData.id %>"><%= onlyData.name %></option>
+                    <% }); %> 
+                </select>
+                <input type="submit" value="Create/Post">
+            </form>
+            <form action="./changeArticle" method="post" id="put">
+                <input type="text" name="title" id="title" placeholder="Title">
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+                <input type="text" name="image" id="image" placeholder="Image Link">
+                <input type="date" name="createdAt" id="createdAt" placeholder="Created At">
+                <input type="date" name="updatedAt" id="updatedAt" placeholder="Updated At">
+                <select name="published" id="published">
+                    <option disabled selected>Published?</option>
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+                <select name="idArticle" id="idArticle">
+                    <option disabled selected>Choose Article :</option>
+                    <% data.forEach(onlyData => { %>
+                    <option value="<%= onlyData.id %>"><%= onlyData.title %></option>
+                    <% }); %> 
+                </select>
+                <select name="idCategory" id="idCategory">
+                    <option disabled selected>Choose Category</option>
+                    <% data2.forEach(onlyData => { %>
+                    <option value="<%= onlyData.id %>"><%= onlyData.name %></option>
+                    <% }); %> 
+                </select>
+                <input type="submit" value="Edit/Add">
+            </form>
+        </div>
+        <figure>
+            <img src="<%= img %>" alt="<%= alt %>">
+        </figure>
+        <article>
+            <% data.forEach(onlyData => { %>
+            <section id="article">
+                <figure>
+                    <img src="<%= onlyData.image %>" alt="Articles">
+                </figure>
+                <h2><%= onlyData.title %></h2>
+                <a href="./article/<%= onlyData.id %>">Read More</a>
+            </section>
+            <% }); %> 
+        </article>
+    </main>
+</body>
+</html>
